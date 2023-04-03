@@ -31,6 +31,8 @@ class MealActivity : AppCompatActivity() {
     private lateinit var mealThumb: String
     private lateinit var mealYoutubeLink: String
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMealBinding.inflate(layoutInflater)

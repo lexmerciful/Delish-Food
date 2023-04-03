@@ -10,6 +10,7 @@ import com.lexmerciful.delishfood.pojo.MealsByCategory
 class PopularMealAdapter():RecyclerView.Adapter<PopularMealAdapter.PopularMealViewHolder>() {
 
     lateinit var onItemClick:((MealsByCategory) -> Unit)
+    var onLongItemClick:((MealsByCategory) -> Unit)? = null
     private var mealsList = ArrayList<MealsByCategory>()
 
     fun setMeals(mealsList: ArrayList<MealsByCategory>){
@@ -35,6 +36,11 @@ class PopularMealAdapter():RecyclerView.Adapter<PopularMealAdapter.PopularMealVi
 
         holder.itemView.setOnClickListener {
             onItemClick.invoke(mealsList[position])
+        }
+
+        holder.itemView.setOnLongClickListener {
+        onLongItemClick?.invoke(mealsList[position])
+            true
         }
     }
 }

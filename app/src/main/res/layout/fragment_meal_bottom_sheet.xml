@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingEnd="@dimen/_15sdp"
+    android:id="@+id/bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.bottomsheets.MealBottomSheetFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/img_bottom_sheet">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:background="@color/g_black"/>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_bottom_sheet"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_margin="@dimen/_3sdp"
+        android:src="@color/accent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_btm_sheet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_3sdp"
+        app:layout_constraintStart_toEndOf="@id/img_bottom_sheet"
+        app:layout_constraintTop_toTopOf="@id/img_bottom_sheet"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_btm_sheet_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/category"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/g_black"
+            android:fontFamily="@font/abelregular"
+            app:drawableStartCompat="@drawable/ic_category"
+            app:drawableTint="@color/g_black" />
+
+        <TextView
+            android:id="@+id/tv_btm_sheet_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/area"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/g_black"
+            android:fontFamily="@font/abelregular"
+            app:drawableStartCompat="@drawable/ic_area"
+            app:drawableTint="@color/g_black" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_btm_sheet_meal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/random_meal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/g_black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/abelregular"
+        app:layout_constraintStart_toStartOf="@id/ll_btm_sheet"
+        app:layout_constraintTop_toBottomOf="@id/ll_btm_sheet"/>
+
+    <TextView
+        android:id="@+id/tv_btm_sheet_click_to_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/click_to_view"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/g_black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/abelregular"
+        app:layout_constraintStart_toStartOf="@id/tv_btm_sheet_meal_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_btm_sheet_meal_name"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

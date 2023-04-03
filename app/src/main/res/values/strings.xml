@@ -12,4 +12,5 @@
     <string name="random_meal">Random meal</string>
     <string name="area">Area :</string>
     <string name="instructions">Instructions :</string>
+    <string name="click_to_view">Click to view</string>
 </resources>

@@ -17,6 +17,7 @@ import com.lexmerciful.delishfood.activities.MealActivity
 import com.lexmerciful.delishfood.adapters.CategoriesListAdapter
 import com.lexmerciful.delishfood.adapters.PopularMealAdapter
 import com.lexmerciful.delishfood.databinding.FragmentHomeBinding
+import com.lexmerciful.delishfood.fragments.bottomsheets.MealBottomSheetFragment
 import com.lexmerciful.delishfood.pojo.Category
 import com.lexmerciful.delishfood.pojo.MealsByCategory
 import com.lexmerciful.delishfood.pojo.Meal
@@ -65,15 +66,32 @@ class HomeFragment : Fragment() {
         viewModel.getRandomMeal()
         observeRandomMeal()
         onRandomMealClick()
+        onRandomMealLongClick()
 
         viewModel.getPopularMeal()
         observePopularMealListLiveData()
         onPopularItemClick()
+        onPopularItemLongClick()
 
         viewModel.getCategoryList()
         observeCategoryList()
         onCategoryClick()
 
+    }
+
+    private fun onRandomMealLongClick() {
+        binding.imgRandomMeal.setOnLongClickListener {
+            val mealBottomSheetFragment = MealBottomSheetFragment.newInstance(randomMeal.idMeal)
+            mealBottomSheetFragment.show(childFragmentManager, "Meal Info")
+            true
+        }
+    }
+
+    private fun onPopularItemLongClick() {
+        popularMealAdapter.onLongItemClick = {meal ->
+            val mealBottomSheetFragment = MealBottomSheetFragment.newInstance(meal.idMeal)
+            mealBottomSheetFragment.show(childFragmentManager, "Meal Info")
+        }
     }
 
     private fun onCategoryClick() {
