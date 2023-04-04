@@ -19,7 +19,7 @@
         <EditText
             android:id="@+id/et_search_box"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_38sdp"
             android:hint="@string/search_meals"
             android:layout_weight="1"
             android:paddingStart="@dimen/_12sdp"
