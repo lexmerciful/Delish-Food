@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.lexmerciful.delishfood.databinding.MealCardItemBinding
 import com.lexmerciful.delishfood.pojo.Meal
 
-class FavouriteMealsAdapter(): RecyclerView.Adapter<FavouriteMealsAdapter.FavouriteMealsViewHolder>() {
+class MealsAdapter(): RecyclerView.Adapter<MealsAdapter.FavouriteMealsViewHolder>() {
 
     lateinit var onItemClick:((Meal) -> Unit)
 

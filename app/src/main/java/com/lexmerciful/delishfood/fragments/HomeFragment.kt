@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.lexmerciful.delishfood.R
 import com.lexmerciful.delishfood.activities.CategoryActivity
 import com.lexmerciful.delishfood.activities.MainActivity
 import com.lexmerciful.delishfood.activities.MealActivity
@@ -77,6 +79,15 @@ class HomeFragment : Fragment() {
         observeCategoryList()
         onCategoryClick()
 
+        onSearchIconClick()
+
+    }
+
+    private fun onSearchIconClick() {
+        binding.imgSearch.setOnClickListener {
+        // Navigate between both fragment
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
     }
 
     private fun onRandomMealLongClick() {

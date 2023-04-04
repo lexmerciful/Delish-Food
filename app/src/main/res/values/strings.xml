@@ -13,4 +13,5 @@
     <string name="area">Area :</string>
     <string name="instructions">Instructions :</string>
     <string name="click_to_view">Click to view</string>
+    <string name="search_meals">Search Meals...</string>
 </resources>
