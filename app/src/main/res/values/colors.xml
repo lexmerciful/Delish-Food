@@ -11,4 +11,5 @@
     <color name="g_black">#33405F</color>
     <color name="text_black">#232323</color>
     <color name="g_gray">#E3DBDB</color>
+    <color name="g_loading">#fffafc</color>
 </resources>

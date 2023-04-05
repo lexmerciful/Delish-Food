@@ -103,7 +103,15 @@ class FavoritesFragment : Fragment() {
 
     private fun observeFavouritesMeals() {
         viewModel.observerFavouriteMealLiveData().observe(viewLifecycleOwner, Observer { meals ->
+            if (meals.isEmpty()){
+                binding.tvNoFavouriteMeal.visibility = View.VISIBLE
+                binding.rvFavourite.visibility = View.GONE
+            }else{
+                binding.tvNoFavouriteMeal.visibility = View.GONE
+                binding.rvFavourite.visibility = View.VISIBLE
+            }
             mealsAdapter.differ.submitList(meals)
+
         })
     }
 

@@ -14,4 +14,5 @@
     <string name="instructions">Instructions :</string>
     <string name="click_to_view">Click to view</string>
     <string name="search_meals">Search Meals...</string>
+    <string name="favourite_meal_is_empty">Favourite Meal is empty. Add Favorite Meal</string>
 </resources>

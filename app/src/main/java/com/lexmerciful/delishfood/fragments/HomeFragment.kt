@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
@@ -65,6 +66,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showLoadingCase()
         viewModel.getRandomMeal()
         observeRandomMeal()
         onRandomMealClick()
@@ -162,13 +164,44 @@ class HomeFragment : Fragment() {
     private fun observeRandomMeal() {
         viewModel.observeRandomMealLiveData().observe(viewLifecycleOwner
         ) { meal ->
-
+            cancelLoadingCase()
              randomMeal = meal
 
             Glide
                 .with(this@HomeFragment)
                 .load(meal.strMealThumb)
                 .into(binding.imgRandomMeal)
+
+        }
+    }
+
+    private fun showLoadingCase() {
+        binding.apply {
+            linearHeader.visibility = View.INVISIBLE
+            tvWouldLikeToEat.visibility = View.INVISIBLE
+            imgRandomMeal.visibility = View.INVISIBLE
+            tvPupItems.visibility = View.INVISIBLE
+            rvMealsPopular.visibility = View.INVISIBLE
+            tvCategory.visibility = View.INVISIBLE
+            categoryCard.visibility = View.INVISIBLE
+            loadingGif.visibility = View.VISIBLE
+            rootHome.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.g_loading))
+
+        }
+    }
+
+    private fun cancelLoadingCase() {
+        binding.apply {
+            linearHeader.visibility = View.VISIBLE
+            tvWouldLikeToEat.visibility = View.VISIBLE
+            imgRandomMeal.visibility = View.VISIBLE
+            tvPupItems.visibility = View.VISIBLE
+            rvMealsPopular.visibility = View.VISIBLE
+            tvCategory.visibility = View.VISIBLE
+            categoryCard.visibility = View.VISIBLE
+            loadingGif.visibility = View.INVISIBLE
+            rootHome.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+
         }
     }
 
